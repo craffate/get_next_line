@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: craffate <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: craffate <craffate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 15:19:42 by craffate          #+#    #+#             */
-/*   Updated: 2016/11/07 18:33:55 by craffate         ###   ########.fr       */
+/*   Created: 2017/03/15 05:52:15 by craffate          #+#    #+#             */
+/*   Updated: 2017/03/15 05:57:50 by craffate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strnew(const size_t si)
 {
-	char	*s;
-	size_t	i;
+	char			*s;
+	unsigned int	i;
 
-	s = (char *)(malloc(sizeof(char) * (size + 1)));
-	i = 0;
-	if (!s)
+	if (!(s = (char *)malloc(sizeof(char) * (si + 1))))
 		return (NULL);
-	s[size] = '\0';
-	while (i < size)
-		s[i++] = '\0';
+	i = -1u;
+	s[si] = 0;
+	while (++i < si)
+		s[i] = 0;
 	return (s);
 }

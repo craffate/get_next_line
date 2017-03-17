@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_returnking.c                                    :+:      :+:    :+:   */
+/*   ft_stackpop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: craffate <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: craffate <craffate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 10:58:23 by craffate          #+#    #+#             */
-/*   Updated: 2016/11/16 12:38:33 by craffate         ###   ########.fr       */
+/*   Created: 2017/03/15 14:26:32 by craffate          #+#    #+#             */
+/*   Updated: 2017/03/15 14:27:30 by craffate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_returnking(void)
+#include "libft.h"
+
+int		ft_stackpop(t_stack *stack)
 {
-	return (92);
+	if (!stack->head)
+		return (-1);
+	return (stack->data[--stack->head]);
 }
